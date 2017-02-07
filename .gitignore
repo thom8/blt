@@ -2,6 +2,10 @@
 /project.yml
 local.*
 
+# Beetbox
+.beetbox/
+Vagrantfile
+
 # OS X
 .DS_Store
 .AppleDouble

@@ -14,6 +14,7 @@
     "type": "composer-plugin",
     "license": "GPL-2.0",
     "require": {
+        "beet/box":                         "^0.4",
         "composer/installers":              "^1.2.0",
         "composer-plugin-api":              "^1.0.0",
         "dflydev/dot-access-data":          "dev-master",
@@ -37,7 +38,46 @@
         }
     },
     "extra": {
-        "class": "Acquia\\Blt\\Composer\\Plugin"
+        "class": "Acquia\\Blt\\Composer\\Plugin",
+        "beetbox": {
+            "config": {
+                "vagrant_ip": "192.168.88.88",
+                "beet_domain": "blt.local",
+                "beet_aliases": [
+                    "adminer.blt.local"
+                ],
+                "beet_root": "{{ beet_base }}/docroot",
+
+                "apache_vhosts": [
+                    {
+                        "servername": "{{ beet_domain }}",
+                        "documentroot": "{{ beet_root }}",
+                        "extra_parameters": "{{ apache_vhost_php_fpm_parameters }}"
+                    },
+                    {
+                        "servername": "adminer.blt.local",
+                        "documentroot": "{{ adminer_install_dir }}",
+                        "extra_parameters": "{{ apache_vhost_php_fpm_parameters }}"
+                    }
+                ],
+                "php_version": "5.6",
+                "php_packages_extra": [
+                    "php{{ php_version }}-bz2"
+                ],
+                "nodejs_npm_global_packages": [
+                    { "name": "bower" },
+                    { "name": "gulp-cli" }
+                ],
+                "php_xdebug_default_enable": 0,
+                "php_xdebug_coverage_enable": 0,
+                "php_xdebug_cli_enable": 0,
+                "php_xdebug_remote_enable": 1,
+                "php_xdebug_remote_connect_back": 1,
+                "php_xdebug_idekey": "PHPSTORM",
+                "php_xdebug_max_nesting_level": 256,
+                "php_xdebug_remote_port": "9000"
+            }
+        }
     },
     "bin": [
         "bin/blt",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "177d4555cd6fcec0397aa8b9621896c2",
+    "content-hash": "38a8c1fec2b70c837146ecbc51a730fa",
     "packages": [
         {
             "name": "asm89/twig-lint",
@@ -56,6 +56,47 @@
                 "twig"
             ],
             "time": "2016-07-25T21:02:13+00:00"
+        },
+        {
+            "name": "beet/box",
+            "version": "0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beetboxvm/beetbox.git",
+                "reference": "3badb85241e6ce839926fd6bf7e2e6bf64515019"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beetboxvm/beetbox/zipball/3badb85241e6ce839926fd6bf7e2e6bf64515019",
+                "reference": "3badb85241e6ce839926fd6bf7e2e6bf64515019",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "require-dev": {
+                "composer/composer": "dev-master",
+                "phpunit/phpunit": "^4.4.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Beet\\Box\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Beet\\Box\\": "composer/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pre-provisioned L*MP stack VM",
+            "homepage": "https://github.com/beetboxvm/beetbox",
+            "time": "2017-02-04T01:31:47+00:00"
         },
         {
             "name": "composer/installers",
@@ -2688,7 +2729,7 @@
                 }
             ],
             "description": "Modern task runner",
-            "time": "2017-01-25T19:25:47+00:00"
+            "time": "2017-01-25 19:25:47"
         },
         {
             "name": "container-interop/container-interop",
